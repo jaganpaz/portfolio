@@ -19,13 +19,17 @@
 
   .section-container {
     @apply max-w-5xl mx-auto px-6 py-24;
+  }
+
+  /* Animated section container */
+  .section-animate {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: opacity, transform;
   }
 
-  .section-container.in-view {
+  .section-animate.in-view {
     opacity: 1;
     transform: translateY(0);
   }

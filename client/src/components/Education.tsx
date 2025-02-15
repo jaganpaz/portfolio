@@ -22,7 +22,7 @@ export default function Education() {
   return (
     <section 
       ref={ref} 
-      className={`section-container ${isInView ? 'in-view' : ''}`}
+      className={`section-container section-animate ${isInView ? 'in-view' : ''}`}
     >
       <h2 className="section-heading">Education</h2>
       <div className="space-y-6">

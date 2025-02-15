@@ -59,7 +59,7 @@ export default function Experience() {
   return (
     <section 
       ref={ref} 
-      className={`section-container bg-muted ${isInView ? 'in-view' : ''}`}
+      className={`section-container section-animate bg-muted ${isInView ? 'in-view' : ''}`}
     >
       <h2 className="section-heading">Work Experience</h2>
       <div className="space-y-6">

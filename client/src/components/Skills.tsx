@@ -38,7 +38,7 @@ export default function Skills() {
   return (
     <section 
       ref={ref} 
-      className={`section-container bg-muted ${isInView ? 'in-view' : ''}`}
+      className={`section-container section-animate bg-muted ${isInView ? 'in-view' : ''}`}
     >
       <h2 className="section-heading">Skills & Expertise</h2>
       <div className="grid gap-6 md:grid-cols-2">
