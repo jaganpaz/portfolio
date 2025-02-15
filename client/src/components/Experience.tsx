@@ -24,16 +24,17 @@ const experiences = [
     title: "Senior Technology Consultant",
     period: "May 2013 - June 2022",
     achievements: [
-      "Led 15+ client implementations across diverse industries (Symantec, Thermo Fisher, Western Union)",
-      "Converted business goals into features for SAFe Agile, enhanced business alignment through 3+ PI Planning cycles",
-      "Reduced delays by 80% by implementing payment guideline validation engine",
-      "Designed centralized Single Entity Store at Western Union, optimizing payment processing",
-      "Streamlined bank data services, cutting development hours by 40%",
-      "Led Enterprise Products' Oracle upgrade from 11g to 12c as Delivery Manager/Technical Lead",
-      "Implemented Oracle Coherence Cache resulting in 4x performance improvement",
-      "Developed web application for Thermo Fisher supporting 2,000 users at launch",
-      "Designed Portal and Content Server for Enterprise Products serving 8,000 employees",
-      "Created Oracle Webcenter portals for Schreiber and Symantec enhancing collaboration"
+      "Led 15+ client implementations across diverse industries (Symantec, Thermo Fisher, Western Union) in a consulting environment. Gained experience working with a wide range of technologies",
+      "Converted business goals into features for SAFe Agile, preplanning driving, socialization, and deep dives. Enhanced business alignment through 3+ PI Planning cycles",
+      "Reduced delays by 80% by implementing a payment guideline validation engine",
+      "Designed a centralized Single Entity Store at Western Union, optimizing payment processing costs and faster payments to end users",
+      "Streamlined bank data services with the 'Find a Bank' microservice, cutting development hours by 40%",
+      "Led the upgrade of Enterprise Products' entire suite of Oracle products from 11g to 12c version as Delivery Manager/Technical Lead",
+      "Led the implementation of the Oracle Coherence Cache enabling all applications to access location, customer, and equipment data. This integration resulted in a 4x improvement in performance",
+      "Led the development of a web application for Thermo Fisher using Oracle Middleware stack that supported 2,000 users at launch, enabling tailored views, secure dashboards, and global inventory reports",
+      "Designed and developed Portal and Content Server for Enterprise Products, providing a centralized platform for 8,000 employees across all departments to collaborate and access critical content",
+      "Developed Portal for Schreiber, enabling internal teams to collaborate, publish blogs, discussions, and announcements, enhancing communication and knowledge sharing across the organization",
+      "Created a single destination Oracle Webcenter portal for Symantec, enabling seamless navigation across enterprise services"
     ]
   },
   {
