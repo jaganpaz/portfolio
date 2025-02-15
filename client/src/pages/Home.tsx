@@ -58,7 +58,7 @@ export default function Home() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = element.offsetTop - 40; // Add some padding
+      const offset = element.offsetTop - 40;
       window.scrollTo({
         top: offset,
         behavior: "smooth"
@@ -106,24 +106,24 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="flex-1 ml-64">
-        <div className="container max-w-4xl py-20">
-          <section id="header" className="min-h-[80vh] flex items-center">
+        <div className="container max-w-4xl">
+          <section id="header">
             <Header />
           </section>
 
-          <section id="about" className="min-h-[80vh] flex items-center">
+          <section id="about">
             <About />
           </section>
 
-          <section id="experience" className="min-h-[80vh] flex items-center">
+          <section id="experience">
             <Experience />
           </section>
 
-          <section id="skills" className="min-h-[80vh] flex items-center">
+          <section id="skills">
             <Skills />
           </section>
 
-          <section id="education" className="min-h-[80vh] flex items-center">
+          <section id="education">
             <Education />
           </section>
         </div>
