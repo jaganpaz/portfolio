@@ -42,6 +42,54 @@ export default function About() {
               </li>
             </ul>
           </div>
+
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Specialized Knowledge</h3>
+            <ul className="space-y-2 text-lg">
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                Microservices Architecture
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                Warehouse Management Systems WMS (HighJump/Körber, Blujay, Bartender, Transportation Management Systems TMS), Reverse Logistics
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                Work with UI/UX Teams to define User Interfaces that are aligned with Business Visions
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Technical Expertise</h3>
+            <ul className="space-y-2 text-lg">
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                Cloud Platforms: AWS (Lambda | API Gateway | ECS | DynamoDB | EC2) | GCP
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                Programming & Frameworks: Java | Spring Boot | REST APIs | Oracle ADF/WebCenter | Angular | Node.js | React
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                Database: Oracle DB | MySql | Postgres | DynamoDB | MongoDb
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                DevOps Tools: Jenkins | Maven | SonarQube | Checkmarx | Docker | Kubernetes
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                Enterprise Tools: Oracle ADF | Webcenter Portal | Content Servers | WebLogic | Oracle Coherence Cache | Redis Cache | Kafka | Pulsar | RabbitMQ | ElasticSearch | Rest Services | GraphQL
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary">•</span>
+                Warehouse Management Systems: HighJump/Körber | Blujay/Parcel/E2Open TMS Systems | Bartender | Rebus
+              </li>
+            </ul>
+          </div>
         </CardContent>
       </Card>
     </section>
