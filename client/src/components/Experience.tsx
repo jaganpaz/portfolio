@@ -3,7 +3,7 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
-    company: "Beyond",
+    company: "Overstock.com / BedBathandBeyond.com / Beyond",
     location: "Dallas, Texas",
     title: "Software Engineering Manager",
     period: "June 2022 - Present",
