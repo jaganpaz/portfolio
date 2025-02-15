@@ -2,10 +2,13 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
 const skills = {
-  "Frontend": ["React", "TypeScript", "Next.js", "Tailwind CSS", "Redux", "HTML5/CSS3"],
-  "Backend": ["Node.js", "Express", "PostgreSQL", "MongoDB", "RESTful APIs", "GraphQL"],
-  "DevOps": ["Git", "Docker", "AWS", "CI/CD", "Kubernetes"],
-  "Other": ["Agile/Scrum", "TDD", "UI/UX Design", "Performance Optimization", "Technical Writing"],
+  "Cloud Platforms": ["AWS Lambda", "API Gateway", "ECS", "DynamoDB", "EC2", "GCP"],
+  "Programming & Frameworks": ["Java", "Spring Boot", "REST APIs", "Oracle ADF", "WebCenter", "Angular", "Node.js", "React"],
+  "Database": ["Oracle DB", "MySQL", "PostgreSQL", "DynamoDB", "MongoDB"],
+  "DevOps": ["Jenkins", "Maven", "SonarQube", "Checkmarx", "Docker", "Kubernetes", "Git", "AWS", "CI/CD"],
+  "Enterprise Tools": ["Oracle ADF", "WebCenter Portal", "Content Servers", "WebLogic", "Oracle Coherence Cache", "Redis Cache", "Kafka", "Pulsar", "RabbitMQ", "ElasticSearch", "REST Services", "GraphQL"],
+  "Warehouse Management": ["HighJump/Körber", "Blujay/Parcel/E2Open TMS Systems", "Bartender", "Rebus"],
+  "Other": ["Agile/Scrum", "TDD", "UI/UX Design", "Performance Optimization", "Technical Writing"]
 };
 
 export default function Skills() {
