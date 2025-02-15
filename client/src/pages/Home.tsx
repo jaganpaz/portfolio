@@ -5,7 +5,7 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Skills from "@/components/Skills";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navItems = [
   { id: "header", label: "Overview" },
@@ -22,11 +22,47 @@ export default function Home() {
     window.print();
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-50% 0px",
+        threshold: 0
+      }
+    );
+
+    // Observe all sections
+    navItems.forEach(({ id }) => {
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      navItems.forEach(({ id }) => {
+        const element = document.getElementById(id);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(sectionId);
+      const offset = element.offsetTop - 40; // Add some padding
+      window.scrollTo({
+        top: offset,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -71,23 +107,23 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 ml-64">
         <div className="container max-w-4xl py-20">
-          <section id="header" className="min-h-screen flex items-center">
+          <section id="header" className="min-h-[80vh] flex items-center">
             <Header />
           </section>
 
-          <section id="about" className="min-h-screen flex items-center">
+          <section id="about" className="min-h-[80vh] flex items-center">
             <About />
           </section>
 
-          <section id="experience" className="min-h-screen">
+          <section id="experience" className="min-h-[80vh] flex items-center">
             <Experience />
           </section>
 
-          <section id="skills" className="min-h-screen flex items-center">
+          <section id="skills" className="min-h-[80vh] flex items-center">
             <Skills />
           </section>
 
-          <section id="education" className="min-h-screen flex items-center">
+          <section id="education" className="min-h-[80vh] flex items-center">
             <Education />
           </section>
         </div>
