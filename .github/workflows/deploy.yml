@@ -20,7 +20,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
@@ -28,11 +28,13 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          VITE_APP_BASE_URL: ${{ github.event.repository.name }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./dist/public
+          path: ./dist
 
   deploy:
     environment:

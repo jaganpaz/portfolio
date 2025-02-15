@@ -5,10 +5,14 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "./", // This is important for GitHub Pages deployment
+  base: process.env.VITE_APP_BASE_URL ? `/${process.env.VITE_APP_BASE_URL}/` : "./", // Dynamic base URL for GitHub Pages
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  build: {
+    outDir: "../dist/public",
+    emptyOutDir: true,
   },
 });
