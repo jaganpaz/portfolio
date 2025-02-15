@@ -2,56 +2,94 @@ import { Button } from "@/components/ui/button";
 import { Printer } from "lucide-react";
 import Header from "@/components/Header";
 import About from "@/components/About";
-import Experience from "@/components/Experience"; 
+import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Skills from "@/components/Skills";
+import { useState } from "react";
+
+const navItems = [
+  { id: "header", label: "Overview" },
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "skills", label: "Skills" },
+  { id: "education", label: "Education" }
+];
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState("header");
+
   const handlePrint = () => {
     window.print();
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(sectionId);
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      {/* Minimal Header */}
-      <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
-        <div className="container flex h-14 items-center">
-          <span className="text-sm font-medium">Portfolio</span>
-          <Button 
+    <div className="flex min-h-screen bg-background">
+      {/* Fixed Sidebar */}
+      <aside className="fixed w-64 h-screen border-r bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="flex flex-col h-full p-6">
+          <div className="space-y-2 mb-8">
+            <h2 className="text-lg font-medium">Jagan Pazhaniyandi</h2>
+            <p className="text-sm text-muted-foreground">Software Engineering Manager</p>
+          </div>
+
+          <nav className="space-y-1 flex-1">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`w-full text-left px-4 py-2 text-sm rounded-md transition-colors
+                  ${activeSection === item.id
+                    ? "bg-primary/10 text-primary font-medium"
+                    : "text-muted-foreground hover:bg-accent"
+                  }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
+
+          <Button
             onClick={handlePrint}
-            className="ml-auto no-print"
-            variant="ghost"
+            className="w-full mt-auto no-print"
+            variant="outline"
             size="sm"
           >
-            <Printer className="h-4 w-4" />
+            <Printer className="mr-2 h-4 w-4" />
+            Download PDF
           </Button>
         </div>
-      </nav>
+      </aside>
 
-      <main className="container max-w-6xl py-20">
-        {/* Header Section */}
-        <div className="mb-32">
-          <Header />
-        </div>
+      {/* Main Content */}
+      <main className="flex-1 ml-64">
+        <div className="container max-w-4xl py-20">
+          <section id="header" className="min-h-screen flex items-center">
+            <Header />
+          </section>
 
-        {/* About Section */}
-        <div className="mb-32">
-          <About />
-        </div>
+          <section id="about" className="min-h-screen flex items-center">
+            <About />
+          </section>
 
-        {/* Skills Section with Grid */}
-        <div className="mb-32">
-          <Skills />
-        </div>
+          <section id="experience" className="min-h-screen">
+            <Experience />
+          </section>
 
-        {/* Experience Section */}
-        <div className="mb-32">
-          <Experience />
-        </div>
+          <section id="skills" className="min-h-screen flex items-center">
+            <Skills />
+          </section>
 
-        {/* Education Section */}
-        <div className="mb-32">
-          <Education />
+          <section id="education" className="min-h-screen flex items-center">
+            <Education />
+          </section>
         </div>
       </main>
     </div>
