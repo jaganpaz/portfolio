@@ -1,5 +1,5 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 
 export default function Header() {
   return (
@@ -25,8 +25,17 @@ export default function Header() {
             </a>
             <span className="flex items-center gap-2">
               <MapPin className="h-4 w-4" />
-              Location
+              Dallas, Texas
             </span>
+            <a 
+              href="https://www.linkedin.com/in/jaganpazhaniyandi/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-2"
+            >
+              <Linkedin className="h-4 w-4" />
+              LinkedIn Profile
+            </a>
           </div>
         </div>
       </div>
