@@ -5,7 +5,6 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Skills from "@/components/Skills";
-import { useState, useEffect } from "react";
 
 const navItems = [
   { id: "header", label: "Overview" },
@@ -16,116 +15,62 @@ const navItems = [
 ];
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState("header");
-
   const handlePrint = () => {
     window.print();
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: "-50% 0px",
-        threshold: 0
-      }
-    );
-
-    // Observe all sections
-    navItems.forEach(({ id }) => {
-      const element = document.getElementById(id);
-      if (element) {
-        observer.observe(element);
-      }
-    });
-
-    return () => {
-      navItems.forEach(({ id }) => {
-        const element = document.getElementById(id);
-        if (element) {
-          observer.unobserve(element);
-        }
-      });
-    };
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = element.offsetTop - 40;
-      window.scrollTo({
-        top: offset,
-        behavior: "smooth"
-      });
-    }
-  };
-
   return (
-    <div className="flex min-h-screen bg-background">
-      {/* Fixed Sidebar */}
-      <aside className="fixed w-64 h-screen border-r bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex flex-col h-full p-6">
-          <div className="space-y-2 mb-8">
+    <div className="min-h-screen bg-background">
+      {/* Top Navigation */}
+      <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-16 items-center justify-between max-w-4xl">
+          <div className="flex items-center space-x-4">
             <h2 className="text-lg font-medium">Jagan Pazhaniyandi</h2>
             <p className="text-sm text-muted-foreground">Software Engineering Manager</p>
           </div>
-
-          <nav className="space-y-1 flex-1">
+          <div className="flex items-center space-x-4">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`w-full text-left px-4 py-2 text-sm rounded-md transition-colors
-                  ${activeSection === item.id
-                    ? "bg-primary/10 text-primary font-medium"
-                    : "text-muted-foreground hover:bg-accent"
-                  }`}
+                href={`#${item.id}`}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.label}
-              </button>
+              </a>
             ))}
-          </nav>
-
-          <Button
-            onClick={handlePrint}
-            className="w-full mt-auto no-print"
-            variant="outline"
-            size="sm"
-          >
-            <Printer className="mr-2 h-4 w-4" />
-            Download PDF
-          </Button>
+            <Button
+              onClick={handlePrint}
+              className="ml-4 no-print"
+              variant="outline"
+              size="sm"
+            >
+              <Printer className="mr-2 h-4 w-4" />
+              Download PDF
+            </Button>
+          </div>
         </div>
-      </aside>
+      </nav>
 
       {/* Main Content */}
-      <main className="flex-1 ml-64">
-        <div className="container max-w-4xl">
-          <section id="header">
-            <Header />
-          </section>
+      <main className="container max-w-4xl py-8">
+        <div id="header" className="py-16">
+          <Header />
+        </div>
 
-          <section id="about">
-            <About />
-          </section>
+        <div id="about" className="py-16">
+          <About />
+        </div>
 
-          <section id="experience">
-            <Experience />
-          </section>
+        <div id="experience" className="py-16">
+          <Experience />
+        </div>
 
-          <section id="skills">
-            <Skills />
-          </section>
+        <div id="skills" className="py-16">
+          <Skills />
+        </div>
 
-          <section id="education">
-            <Education />
-          </section>
+        <div id="education" className="py-16">
+          <Education />
         </div>
       </main>
     </div>

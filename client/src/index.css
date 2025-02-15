@@ -14,20 +14,11 @@
 
 @layer components {
   .section-heading {
-    @apply text-3xl font-light tracking-tight mb-16;
+    @apply text-3xl font-light tracking-tight mb-8;
   }
 
   .section-container {
     @apply w-full space-y-8;
-  }
-
-  section {
-    @apply py-20;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    opacity: 1;
-    transform: none;
   }
 
   /* Card hover effects */
@@ -78,13 +69,8 @@
     display: none !important;
   }
 
-  section {
+  div[id] {
     break-inside: avoid;
-    min-height: auto !important;
     padding: 2rem 0;
-  }
-
-  main {
-    margin-left: 0 !important;
   }
 }
