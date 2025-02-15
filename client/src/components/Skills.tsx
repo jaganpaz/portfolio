@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { useInView } from "@/hooks/useInView";
 
 const skills = {
   "Leadership & Management": [
@@ -32,17 +33,26 @@ const skills = {
 };
 
 export default function Skills() {
+  const [ref, isInView] = useInView({ threshold: 0.1 });
+
   return (
-    <section className="section-container bg-muted">
+    <section 
+      ref={ref} 
+      className={`section-container bg-muted ${isInView ? 'in-view' : ''}`}
+    >
       <h2 className="section-heading">Skills & Expertise</h2>
       <div className="grid gap-6 md:grid-cols-2">
         {Object.entries(skills).map(([category, items]) => (
-          <Card key={category}>
+          <Card key={category} className="card-hover">
             <CardContent className="pt-6">
               <h3 className="text-xl font-semibold mb-4">{category}</h3>
               <div className="flex flex-wrap gap-2">
                 {items.map((skill) => (
-                  <Badge key={skill} variant="secondary" className="text-sm">
+                  <Badge 
+                    key={skill} 
+                    variant="secondary" 
+                    className="text-sm badge-hover"
+                  >
                     {skill}
                   </Badge>
                 ))}

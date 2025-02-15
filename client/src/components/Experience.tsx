@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Briefcase } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 const experiences = [
   {
@@ -53,12 +54,17 @@ const experiences = [
 ];
 
 export default function Experience() {
+  const [ref, isInView] = useInView({ threshold: 0.1 });
+
   return (
-    <section className="section-container bg-muted">
+    <section 
+      ref={ref} 
+      className={`section-container bg-muted ${isInView ? 'in-view' : ''}`}
+    >
       <h2 className="section-heading">Work Experience</h2>
       <div className="space-y-6">
         {experiences.map((exp) => (
-          <Card key={exp.company}>
+          <Card key={exp.company} className="card-hover">
             <CardContent className="pt-6">
               <div className="flex items-start gap-4">
                 <div className="p-2 bg-primary/10 rounded-lg">

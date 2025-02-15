@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Award } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 const education = [
   {
@@ -16,12 +17,17 @@ const certifications = [
 ];
 
 export default function Education() {
+  const [ref, isInView] = useInView({ threshold: 0.1 });
+
   return (
-    <section className="section-container">
+    <section 
+      ref={ref} 
+      className={`section-container ${isInView ? 'in-view' : ''}`}
+    >
       <h2 className="section-heading">Education</h2>
       <div className="space-y-6">
         {education.map((edu) => (
-          <Card key={edu.school}>
+          <Card key={edu.school} className="card-hover">
             <CardContent className="pt-6">
               <div className="flex items-start gap-4">
                 <div className="p-2 bg-primary/10 rounded-lg">
@@ -37,7 +43,7 @@ export default function Education() {
           </Card>
         ))}
 
-        <Card>
+        <Card className="card-hover">
           <CardContent className="pt-6">
             <div className="flex items-start gap-4">
               <div className="p-2 bg-primary/10 rounded-lg">
