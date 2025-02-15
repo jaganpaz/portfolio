@@ -6,7 +6,6 @@ export default function Header() {
     <header className="bg-primary text-white py-16">
       <div className="section-container flex flex-col md:flex-row items-center gap-8">
         <Avatar className="w-48 h-48 border-4 border-white">
-          <AvatarImage src="https://images.unsplash.com/photo-1507679799987-c73779587ccf" alt="Professional headshot" />
           <AvatarFallback>JP</AvatarFallback>
         </Avatar>
 
