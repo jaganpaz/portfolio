@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Printer } from "lucide-react";
 import Header from "@/components/Header";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
@@ -40,10 +38,6 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <div className="min-h-screen bg-background">
       {/* Header with Navigation */}
@@ -69,15 +63,6 @@ export default function Home() {
                   {label}
                 </a>
               ))}
-              <Button
-                onClick={handlePrint}
-                variant="outline"
-                size="sm"
-                className="no-print"
-              >
-                <Printer className="mr-2 h-4 w-4" />
-                PDF
-              </Button>
             </nav>
           </div>
         </div>
