@@ -6,6 +6,7 @@ export function useInView(options = { threshold: 0.1 }) {
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
+      // Update state based on current intersection status
       setIsInView(entry.isIntersecting);
     }, options);
 
