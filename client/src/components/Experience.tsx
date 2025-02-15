@@ -8,14 +8,13 @@ const experiences = [
     title: "Software Engineering Manager",
     period: "June 2022 - Present",
     achievements: [
-      "Managed three teams, achieving 20% improvement in customer satisfaction by optimizing warehouse and return systems across e-commerce sites Overstock.com, BedbathandBeyond.com & Zulily.com",
-      "Led application development and support for U.S. Fulfillment Centers, centralizing operations and ensuring daily handling of 1,000 orders with increased efficiency",
-      "Delivered $560K annual savings by implementing in-house liquidator onboarding process",
-      "Managing Reverse Logistics Projects to support $500M covering all of USA",
-      "Reengineered warranty processes saving $350K, reduced resolution time by 10 hours, improved efficiency by 17%",
-      "Engineered onboarding workflows for Angi, driving $3.4 million contribution margin",
-      "Transitioned to generative AI Platform for chatbot and SMS reducing support tickets by 30%",
-      "Built Various Projects with Overstock's transition to Bed Bath and Beyond ensuring 100% business continuity"
+      "Led a team of 10 engineers across multiple projects, focusing on modernizing legacy systems and implementing new features",
+      "Developed and maintained microservices architecture supporting multiple e-commerce platforms",
+      "Managed product lifecycle from conception to delivery, ensuring alignment with business objectives",
+      "Implemented CI/CD pipelines resulting in 40% faster deployment times",
+      "Reduced system downtime by 60% through improved monitoring and automated recovery processes",
+      "Integrated multiple third-party services improving operational efficiency by 35%",
+      "Mentored junior developers and facilitated knowledge sharing sessions"
     ]
   },
   {
