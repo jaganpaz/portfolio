@@ -42,12 +42,12 @@ const experiences = [
     title: "Senior Associate Consultant",
     period: "June 2004 - May 2013",
     achievements: [
-      "Orchestrated migration of application suites to Oracle Ecosystem, leading team of 20 members",
-      "Designed & Developed Visibility Tool for business shipment tracking",
-      "Built portal for BP & GM managing EDI Workflows and purchase order visibility",
-      "Identified root cause analysis for support tickets improving warehouse processes",
-      "Built 6 High Jump warehouses for companies like Wal-Mart, Kohls, Target & Family Dollar",
-      "Led team of 6 in creating Pricing app for North American market"
+      "Orchestrated the migration of entire application suites to Oracle Ecosystem, serving as a pivotal liaison among Datawarehousing, QA, and Development teams. Led a team of 20 members onsite offshore",
+      "Design & Developed a Visibility Tool for business to track shipments. The tool enhanced visibility and resulted in significant improvements in the shipment tracking process",
+      "Built portal for BP & GM that allowed Schneider to request Inbound Transportation of their supplier base. This application managed various EDI Workflows provided purchase order visibility",
+      "Identified root cause analysis for support tickets to identify potential fixes resulting in cost savings and faster efficiency of warehouse processes",
+      "Built 6 High Jump warehouses for companies such as Wal-Mart, Kohls, Target & Family Dollar and established a production support model for applications handling warehouse management",
+      "Led a team of 6 in creating a Pricing app that captures, processes, and responds to custom requests for quotes. This tool was used to price the North American market"
     ]
   }
 ];
