@@ -8,13 +8,14 @@ const experiences = [
     title: "Software Engineering Manager",
     period: "June 2022 - Present",
     achievements: [
-      "Led a team of 10 engineers across multiple projects, focusing on modernizing legacy systems and implementing new features",
-      "Developed and maintained microservices architecture supporting multiple e-commerce platforms",
-      "Managed product lifecycle from conception to delivery, ensuring alignment with business objectives",
-      "Implemented CI/CD pipelines resulting in 40% faster deployment times",
-      "Reduced system downtime by 60% through improved monitoring and automated recovery processes",
-      "Integrated multiple third-party services improving operational efficiency by 35%",
-      "Mentored junior developers and facilitated knowledge sharing sessions"
+      "Managed three teams in Beyond, achieving a 20% improvement in customer satisfaction by optimizing warehouse and return systems across e-commerce sites Overstock.com, BedbathandBeyond.com & Zulily.com",
+      "Led application development and support for U.S. Fulfillment Centers, centralizing operations and ensuring the daily handling of 1,000 orders with increased efficiency",
+      "Delivered $560K annual savings by implementing an in-house liquidator onboarding process, reducing warehouse labor and shipping costs",
+      "Managing the Reverse Logistics Projects to support $500M Covering all of USA",
+      "Reengineered warranty processes saving $350K and enhanced warranty shopping experience, reduced resolution time by 10 hours, and improved efficiency by 17%",
+      "Engineered onboarding workflows for Angi and streamlined the installation process to boost conversion rates and enhance the customer experience, driving a $3.4 million contribution margin",
+      "Transitioned to a generative AI Platform for chatbot and SMS reducing support tickets by 30% and boosting satisfaction rates",
+      "Built Various Projects with Overstock's transition to Bed Bath and Beyond ensuring smooth operations and 100% business continuity"
     ]
   },
   {
