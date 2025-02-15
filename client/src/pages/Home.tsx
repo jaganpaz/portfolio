@@ -92,7 +92,7 @@ export default function Home() {
 
         {/* Content Sections */}
         <div className="space-y-24">
-          <section id="about" className="bg-muted/50">
+          <section id="about">
             <div className="container py-24 max-w-[90rem] mx-auto px-8">
               <About />
             </div>
@@ -104,7 +104,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="skills" className="bg-muted/50">
+          <section id="skills">
             <div className="container py-24 max-w-[90rem] mx-auto px-8">
               <Skills />
             </div>
