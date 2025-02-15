@@ -84,28 +84,36 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="container py-8">
+      <main>
         {/* Cover/Header Section */}
-        <div className="py-12">
+        <div className="container py-12 max-w-[90rem] mx-auto px-8">
           <Header />
         </div>
 
         {/* Content Sections */}
         <div className="space-y-24">
-          <section id="about">
-            <About />
+          <section id="about" className="bg-muted/50">
+            <div className="container py-24 max-w-[90rem] mx-auto px-8">
+              <About />
+            </div>
           </section>
 
           <section id="experience">
-            <Experience />
+            <div className="container py-24 max-w-[90rem] mx-auto px-8">
+              <Experience />
+            </div>
           </section>
 
-          <section id="skills">
-            <Skills />
+          <section id="skills" className="bg-muted/50">
+            <div className="container py-24 max-w-[90rem] mx-auto px-8">
+              <Skills />
+            </div>
           </section>
 
           <section id="education">
-            <Education />
+            <div className="container py-24 max-w-[90rem] mx-auto px-8">
+              <Education />
+            </div>
           </section>
         </div>
       </main>

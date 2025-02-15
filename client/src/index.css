@@ -78,6 +78,7 @@
     break-inside: avoid;
     page-break-inside: avoid;
     padding: 2rem 0;
+    background: none !important;
   }
 
   .container {
