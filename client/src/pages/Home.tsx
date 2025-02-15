@@ -43,21 +43,24 @@ export default function Home() {
       {/* Header with Navigation */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container py-4">
-          <nav className="flex items-center justify-center space-x-6">
-            {navItems.map(({ id, label }) => (
-              <a
-                key={id}
-                href={`#${id}`}
-                className={`text-sm transition-colors hover:text-foreground ${
-                  activeSection === id
-                    ? "text-foreground font-medium"
-                    : "text-muted-foreground"
-                }`}
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
+          <div className="flex items-center justify-between">
+            <h1 className="text-xl font-bold">Jagan Pazhaniyandi</h1>
+            <nav className="flex items-center space-x-6">
+              {navItems.map(({ id, label }) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  className={`text-sm transition-colors hover:text-foreground ${
+                    activeSection === id
+                      ? "text-foreground font-medium"
+                      : "text-muted-foreground"
+                  }`}
+                >
+                  {label}
+                </a>
+              ))}
+            </nav>
+          </div>
         </div>
       </header>
 
