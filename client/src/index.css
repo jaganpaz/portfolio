@@ -4,11 +4,16 @@
 
 @layer base {
   * {
-    @apply border-border scroll-smooth;
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground overflow-x-hidden;
+    @apply font-sans antialiased bg-background text-foreground;
   }
 }
 
@@ -69,8 +74,14 @@
     display: none !important;
   }
 
-  div[id] {
+  section {
     break-inside: avoid;
+    page-break-inside: avoid;
     padding: 2rem 0;
+  }
+
+  .container {
+    max-width: none !important;
+    padding: 0 !important;
   }
 }
