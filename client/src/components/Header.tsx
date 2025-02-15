@@ -1,15 +1,9 @@
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 
 export default function Header() {
   return (
     <header className="bg-primary text-white py-16">
-      <div className="section-container flex flex-col md:flex-row items-center gap-8">
-        <Avatar className="w-48 h-48 border-4 border-white">
-          <AvatarImage src="/Jagan Pazhaniyandi.jpg" alt="Jagan Pazhaniyandi" />
-          <AvatarFallback>JP</AvatarFallback>
-        </Avatar>
-
+      <div className="section-container">
         <div className="text-center md:text-left">
           <h1 className="text-4xl font-bold mb-2">Jagan Pazhaniyandi</h1>
           <h2 className="text-2xl mb-4">Software Engineering Manager</h2>
