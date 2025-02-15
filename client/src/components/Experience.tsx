@@ -59,7 +59,7 @@ export default function Experience() {
   return (
     <section 
       ref={ref} 
-      className={`section-container section-animate bg-muted ${isInView ? 'in-view' : ''}`}
+      className={`section-container section-animate ${isInView ? 'in-view' : ''}`}
     >
       <h2 className="section-heading">Work Experience</h2>
       <div className="space-y-6">
@@ -81,7 +81,7 @@ export default function Experience() {
                   )}
                   <ul className="space-y-2">
                     {exp.achievements.map((achievement, index) => (
-                      <li key={index} className="flex items-start gap-2 text-gray-600">
+                      <li key={index} className="flex items-start gap-2 text-muted-foreground">
                         <span className="text-primary mt-1.5">•</span>
                         <span>{achievement}</span>
                       </li>
