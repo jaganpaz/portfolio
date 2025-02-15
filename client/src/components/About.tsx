@@ -8,7 +8,7 @@ export default function About() {
         <CardContent className="pt-6 space-y-6">
           <div>
             <p className="text-lg leading-relaxed">
-              Seasoned technology professional with 20+ years of experience in Consulting & Engineering Management 
+              20+ years of experience in Consulting & Engineering Management 
               across the technology landscape. Expertise in Digital Transformation, Modernization, Infrastructure 
               Modernization, and Customer Experience enhancement. Demonstrated success in multiple roles including 
               Tech Leading, Design & Development, Solution Analysis, Product Management, and Enterprise & Application 
