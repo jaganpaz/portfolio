@@ -44,7 +44,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container py-4">
           <div className="flex items-center justify-between">
-            <h1 className="font-display text-2xl font-semibold">Jagan Pazhaniyandi</h1>
+            <h1 className="text-xl font-bold">Jagan Pazhaniyandi</h1>
             <nav className="flex items-center space-x-6">
               {navItems.map(({ id, label }) => (
                 <a
