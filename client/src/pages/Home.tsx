@@ -11,60 +11,47 @@ export default function Home() {
     window.print();
   };
 
-  const stats = [
-    { label: "Years Experience", value: "20+" },
-    { label: "Projects Led", value: "50+" },
-    { label: "Team Size Managed", value: "20+" },
-    { label: "Certifications", value: "3" },
-  ];
-
   return (
-    <div className="min-h-screen bg-gray-50/50">
-      <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center">
-          <h2 className="text-lg font-semibold">Jagan Pazhaniyandi</h2>
+    <div className="min-h-screen bg-background">
+      {/* Minimal Header */}
+      <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
+        <div className="container flex h-14 items-center">
+          <span className="text-sm font-medium">Portfolio</span>
           <Button 
             onClick={handlePrint}
             className="ml-auto no-print"
-            variant="secondary"
+            variant="ghost"
+            size="sm"
           >
-            <Printer className="mr-2 h-4 w-4" />
-            Download PDF
+            <Printer className="h-4 w-4" />
           </Button>
         </div>
       </nav>
 
-      <main className="container py-8">
-        {/* Stats Overview */}
-        <div className="grid gap-4 md:grid-cols-4 mb-8">
-          {stats.map((stat) => (
-            <div key={stat.label} className="rounded-lg border bg-card p-6 text-card-foreground shadow-sm">
-              <div className="text-3xl font-bold">{stat.value}</div>
-              <p className="text-sm text-muted-foreground">{stat.label}</p>
-            </div>
-          ))}
+      <main className="container max-w-6xl py-20">
+        {/* Header Section */}
+        <div className="mb-32">
+          <Header />
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {/* Left Column */}
-          <div className="space-y-6">
-            <section className="rounded-lg border bg-card shadow-sm">
-              <About />
-            </section>
-            <section className="rounded-lg border bg-card shadow-sm">
-              <Skills />
-            </section>
-          </div>
+        {/* About Section */}
+        <div className="mb-32">
+          <About />
+        </div>
 
-          {/* Right Column */}
-          <div className="space-y-6">
-            <section className="rounded-lg border bg-card shadow-sm">
-              <Experience />
-            </section>
-            <section className="rounded-lg border bg-card shadow-sm">
-              <Education />
-            </section>
-          </div>
+        {/* Skills Section with Grid */}
+        <div className="mb-32">
+          <Skills />
+        </div>
+
+        {/* Experience Section */}
+        <div className="mb-32">
+          <Experience />
+        </div>
+
+        {/* Education Section */}
+        <div className="mb-32">
+          <Education />
         </div>
       </main>
     </div>
