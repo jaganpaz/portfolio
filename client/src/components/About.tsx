@@ -20,46 +20,6 @@ export default function About() {
               driving innovation and delivering high-impact solutions across different technology streams.
             </p>
           </div>
-
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Leadership & Management</h3>
-            <ul className="space-y-2 text-lg">
-              <li className="flex items-start gap-2">
-                <span className="text-primary">•</span>
-                Technical Leadership, Strategic Planning, Agile/Safe Agile Methodologies
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary">•</span>
-                Stakeholder & Client Relationship Management, Team Building & Mentoring
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary">•</span>
-                Technical Analysis & Application design
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary">•</span>
-                User Story Grooming, planning sessions and prioritizing development stories among teams
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Specialized Knowledge</h3>
-            <ul className="space-y-2 text-lg">
-              <li className="flex items-start gap-2">
-                <span className="text-primary">•</span>
-                Microservices Architecture
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary">•</span>
-                Warehouse Management Systems WMS (HighJump/Körber, Blujay, Bartender, Transportation Management Systems TMS), Reverse Logistics
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary">•</span>
-                Work with UI/UX Teams to define User Interfaces that are aligned with Business Visions
-              </li>
-            </ul>
-          </div>
         </CardContent>
       </Card>
     </section>
