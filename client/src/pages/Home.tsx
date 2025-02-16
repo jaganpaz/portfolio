@@ -41,8 +41,7 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToSection = (id: string, e: React.MouseEvent) => {
-    e.preventDefault();
+  const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -58,10 +57,9 @@ export default function Home() {
 
             <nav className="hidden md:flex items-center space-x-6">
               {navItems.map(({ id, label }) => (
-                <a
+                <button
                   key={id}
-                  href={`#${id}`}
-                  onClick={(e) => scrollToSection(id, e)}
+                  onClick={() => scrollToSection(id)}
                   className={`text-sm transition-colors hover:text-foreground ${
                     activeSection === id
                       ? "text-foreground font-medium"
@@ -69,7 +67,7 @@ export default function Home() {
                   }`}
                 >
                   {label}
-                </a>
+                </button>
               ))}
             </nav>
 
@@ -83,25 +81,24 @@ export default function Home() {
               <SheetContent side="right" className="w-[80%] sm:w-[385px]">
                 <nav className="flex flex-col gap-4 mt-8">
                   {navItems.map(({ id, label }) => (
-                    <a
+                    <button
                       key={id}
-                      href={`#${id}`}
-                      onClick={(e) => {
-                        scrollToSection(id, e);
+                      onClick={() => {
+                        scrollToSection(id);
                         const sheet = document.querySelector('[data-state="open"]');
                         if (sheet) {
                           const closeButton = sheet.querySelector('button[aria-label="Close"]');
                           closeButton?.click();
                         }
                       }}
-                      className={`text-lg py-2 transition-colors hover:text-foreground ${
+                      className={`text-lg py-2 transition-colors hover:text-foreground text-left ${
                         activeSection === id
                           ? "text-foreground font-medium"
                           : "text-muted-foreground"
                       }`}
                     >
                       {label}
-                    </a>
+                    </button>
                   ))}
                 </nav>
               </SheetContent>
