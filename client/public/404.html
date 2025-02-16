@@ -2,13 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Jagan Pazhaniyandi - Portfolio</title>
+    <title>Portfolio - Jagan Pazhaniyandi</title>
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
-      var segment = window.location.pathname.replace('/portfolio/', '/');
-      window.location.href = '/portfolio/#' + segment;
+      var pathSegments = window.location.pathname.split('/');
+      var basePathIndex = pathSegments.indexOf('portfolio');
+      var pathAfterBase = pathSegments.slice(basePathIndex + 1).join('/');
+      window.location.href = '/portfolio/#/' + pathAfterBase;
     </script>
   </head>
   <body>
