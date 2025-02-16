@@ -24,6 +24,9 @@ export default function Home() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
+            // Update the hash without triggering a navigation
+            const newUrl = window.location.pathname + '#' + entry.target.id;
+            window.history.replaceState(null, '', newUrl);
           }
         });
       },
@@ -46,6 +49,9 @@ export default function Home() {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      // Update the hash without triggering a navigation
+      const newUrl = window.location.pathname + '#' + id;
+      window.history.replaceState(null, '', newUrl);
     }
   };
 
