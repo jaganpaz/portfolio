@@ -12,7 +12,6 @@ const base = import.meta.env.VITE_BASE || '/portfolio/';
 // Custom hook for handling GitHub Pages hash-based routing
 const useHashLocation = (): [string, (to: string, ...args: any[]) => void] => {
   const getHashLocation = () => {
-    // Default to '/' if no hash is present
     const hash = window.location.hash.replace('#', '') || '/';
     return hash.startsWith('/') ? hash : '/' + hash;
   };

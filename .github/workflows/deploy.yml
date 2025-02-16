@@ -29,26 +29,16 @@ jobs:
       - name: Build project
         run: npm run build
         env:
-          VITE_APP_BASE_URL: "/portfolio"
-          VITE_BASE: "/portfolio/"
-          PUBLIC_URL: "/portfolio"
-          BASE_URL: "/portfolio/"
+          VITE_BASE: "/"
+          VITE_APP_BASE_URL: "/"
+          VITE_PUBLIC_PATH: "/"
           NODE_ENV: "production"
-          VITE_PUBLIC_PATH: "/portfolio/"
 
       - name: Setup GitHub Pages files
         run: |
           cp dist/public/index.html dist/public/404.html
           touch dist/public/.nojekyll
           echo "/* /index.html 200" > dist/public/_redirects
-          # Update asset paths in HTML files
-          find dist/public -type f -name "*.html" -exec sed -i 's|"/assets|"/portfolio/assets|g' {} +
-          # Add base tag if not present
-          find dist/public -type f -name "*.html" -exec sed -i 's|<head>|<head><base href="/portfolio/"/>|' {} +
-          # Update asset paths in JS files
-          find dist/public -type f -name "*.js" -exec sed -i 's|"/assets|"/portfolio/assets|g' {} +
-          # Handle source maps if they exist
-          find dist/public -type f -name "*.map" -exec sed -i 's|"/assets|"/portfolio/assets|g' {} +
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
