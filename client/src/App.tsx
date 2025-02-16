@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from "wouter";
+import { Router, Route } from "wouter";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
@@ -12,26 +12,15 @@ const base = import.meta.env.VITE_BASE || '/portfolio/';
 // Custom hook for handling GitHub Pages hash-based routing
 const useHashLocation = (): [string, (to: string, ...args: any[]) => void] => {
   const getHashLocation = () => {
-    let hash = window.location.hash.replace('#', '') || '/';
-    // Ensure hash starts with '/' and handle empty hash
-    hash = hash.startsWith('/') ? hash : '/' + hash;
-    // Remove base path if present in the hash
-    if (hash.startsWith(base)) {
-      hash = hash.slice(base.length);
-    }
-    return hash;
+    // Default to '/' if no hash is present
+    return window.location.hash.replace('#', '') || '/';
   };
 
   const [loc, setLoc] = React.useState(getHashLocation());
 
   React.useEffect(() => {
     // Update loc when the hash changes
-    const handler = () => {
-      const newLoc = getHashLocation();
-      setLoc(newLoc);
-    };
-
-    // Listen to hashchange events
+    const handler = () => setLoc(getHashLocation());
     window.addEventListener('hashchange', handler);
     // Handle initial route on page load
     handler();
@@ -49,10 +38,8 @@ const useHashLocation = (): [string, (to: string, ...args: any[]) => void] => {
 function AppRouter() {
   return (
     <Router hook={useHashLocation}>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route component={NotFound} />
-      </Switch>
+      <Route path="/" component={Home} />
+      <Route component={NotFound} />
     </Router>
   );
 }
