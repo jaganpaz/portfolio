@@ -32,6 +32,7 @@ jobs:
           VITE_APP_BASE_URL: "portfolio"
           BASE_URL: "/portfolio/"
           VITE_BASE: "/portfolio/"
+          NODE_ENV: "production"
 
       - name: Copy index.html to 404.html
         run: cp dist/public/index.html dist/public/404.html

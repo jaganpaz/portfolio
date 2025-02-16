@@ -17,12 +17,13 @@ const useBasePath = () => {
     return hasBase ? path.slice(base.length) || '/' : path;
   };
 
-  // Navigate function that prepends the base path
-  const navigate = (to: string) => {
-    window.history.pushState(null, '', base + to.slice(1));
+  // Navigate function that prepends the base path and handles the history API
+  const navigate = (to: string, { replace = false } = {}) => {
+    const method = replace ? 'replaceState' : 'pushState';
+    window.history[method](null, '', base + (to === '/' ? '' : to));
   };
 
-  return [currentLocation(), navigate] as const;
+  return [currentLocation(), navigate];
 };
 
 function AppRouter() {
