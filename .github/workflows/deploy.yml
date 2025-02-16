@@ -50,7 +50,7 @@ jobs:
           # Handle source maps if they exist
           find dist/public -type f -name "*.map" -exec sed -i 's|"/assets|"/portfolio/assets|g' {} +
           # Ensure index.html is properly configured
-          cat > dist/public/index.html << 'EOL'
+          cat > dist/public/index.html << EOL
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -77,7 +77,7 @@ jobs:
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/portfolio/assets/index-CXyJASjd.js"></script>
+    <script type="module" src="/portfolio/assets/index-BwHb7hv3.js"></script>
     <link rel="stylesheet" href="/portfolio/assets/index-CZMyz56N.css">
   </body>
 </html>
