@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Jagan Pazhaniyandi</title>
     <meta name="description" content="Technology consulting and engineering management portfolio of Jagan Pazhaniyandi" />
-    <base href="%BASE_URL%">
 
     <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
@@ -27,11 +26,15 @@
 
     <!-- Handle direct access to routes -->
     <script type="text/javascript">
+      // Handle routing for GitHub Pages deployment
       (function(l) {
         if (l.pathname.split('/')[1] === 'portfolio') {
           var segment = l.pathname.split('/').slice(2).join('/');
-          if (segment && !l.search && !l.hash) {
-            history.replaceState(null, null, '/portfolio/?/' + segment);
+          if (segment !== '' && !l.search && !l.hash) {
+            l.replace(
+              l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+              '/portfolio/?/' + segment + l.hash
+            );
           }
         }
       })(window.location);
