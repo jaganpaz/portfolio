@@ -41,20 +41,22 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  const getBasePath = () => {
+    return import.meta.env.VITE_APP_BASE_URL ? `/${import.meta.env.VITE_APP_BASE_URL}` : '/portfolio';
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Header with Navigation */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-xl font-bold">Jagan Pazhaniyandi</h1>
 
-            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6">
               {navItems.map(({ id, label }) => (
                 <a
                   key={id}
-                  href={`#${id}`}
+                  href={`${getBasePath()}/#${id}`}
                   className={`text-sm transition-colors hover:text-foreground ${
                     activeSection === id
                       ? "text-foreground font-medium"
@@ -66,7 +68,6 @@ export default function Home() {
               ))}
             </nav>
 
-            {/* Mobile Navigation */}
             <Sheet>
               <SheetTrigger asChild className="md:hidden">
                 <Button variant="ghost" size="icon">
@@ -79,7 +80,7 @@ export default function Home() {
                   {navItems.map(({ id, label }) => (
                     <a
                       key={id}
-                      href={`#${id}`}
+                      href={`${getBasePath()}/#${id}`}
                       className={`text-lg py-2 transition-colors hover:text-foreground ${
                         activeSection === id
                           ? "text-foreground font-medium"
@@ -103,14 +104,11 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Content */}
       <main>
-        {/* Cover/Header Section */}
         <div className="container py-12 max-w-[90rem] mx-auto px-4 md:px-8">
           <Header />
         </div>
 
-        {/* Content Sections */}
         <div className="space-y-24">
           <section id="about">
             <div className="container py-24 max-w-[90rem] mx-auto px-4 md:px-8">
