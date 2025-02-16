@@ -1,3 +1,4 @@
+import React from 'react';
 import { Router, Route } from "wouter";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
@@ -7,51 +8,40 @@ import Home from "@/pages/Home";
 
 // Get base from environment with fallback
 const base = import.meta.env.VITE_BASE || '/portfolio/';
-const isProduction = import.meta.env.PROD;
 
-// Custom hook for handling base path in both development and production
-const useBasePath = () => {
-  // Get the current location relative to the base path
-  const currentLocation = () => {
-    const path = window.location.pathname;
-    const hash = window.location.hash.slice(1); // Remove the # character
-
-    // In production (GitHub Pages), use hash-based routing
-    if (isProduction) {
-      if (hash) {
-        // Remove leading slash if present to avoid double slashes
-        return hash.startsWith('/') ? hash : '/' + hash;
-      }
-      // Initialize hash routing on first load
-      const pathname = path.replace('/portfolio/', '') || '/';
-      window.location.replace(window.location.origin + '/portfolio/#' + pathname);
-      return pathname;
-    }
-
-    // Handle base path in development
-    const hasBase = path.startsWith(base);
-    return hasBase ? path.slice(base.length) || '/' : path;
+// Custom hook for handling GitHub Pages hash-based routing
+const useHashLocation = () => {
+  const getHashLocation = () => {
+    // Get the hash without the '#' symbol and ensure it starts with '/'
+    const hash = window.location.hash.replace('#', '') || '/';
+    return hash.startsWith('/') ? hash : '/' + hash;
   };
 
-  // Navigate function that handles both hash-based and regular routing
-  const navigate = (to: string, { replace = false } = {}) => {
-    // In production (GitHub Pages), use hash-based routing
-    if (isProduction) {
-      const newPath = to === '/' ? '/' : to.startsWith('/') ? to : '/' + to;
-      window.location.hash = newPath;
-    } else {
-      // In development, use regular routing
-      const method = replace ? 'replaceState' : 'pushState';
-      window.history[method](null, '', base + (to === '/' ? '' : to));
-    }
+  const [loc, setLoc] = React.useState(getHashLocation());
+
+  React.useEffect(() => {
+    // Update loc when the hash changes
+    const handler = () => {
+      const newLoc = getHashLocation();
+      setLoc(newLoc);
+    };
+
+    // Listen to hashchange events
+    window.addEventListener('hashchange', handler);
+    return () => window.removeEventListener('hashchange', handler);
+  }, []);
+
+  // Return location and navigate function
+  const navigate = (to: string) => {
+    window.location.hash = to.startsWith('/') ? to : '/' + to;
   };
 
-  return [currentLocation(), navigate];
+  return [loc, navigate] as const;
 };
 
 function AppRouter() {
   return (
-    <Router hook={useBasePath}>
+    <Router hook={useHashLocation}>
       <Route path="/" component={Home} />
       <Route path="*" component={NotFound} />
     </Router>
