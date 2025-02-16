@@ -41,11 +41,12 @@ jobs:
           cp dist/public/index.html dist/public/404.html
           touch dist/public/.nojekyll
           echo "/* /index.html 200" > dist/public/_redirects
-          # Ensure all asset paths are correct
-          find dist/public -type f -name "*.html" -exec sed -i 's|src="/assets|src="/portfolio/assets|g' {} +
-          find dist/public -type f -name "*.html" -exec sed -i 's|href="/assets|href="/portfolio/assets|g' {} +
-          # Add base tag to HTML files
+          # Update asset paths in HTML files
+          find dist/public -type f -name "*.html" -exec sed -i 's|"/assets|"/portfolio/assets|g' {} +
+          # Add base tag if not present
           find dist/public -type f -name "*.html" -exec sed -i 's|<head>|<head><base href="/portfolio/"/>|' {} +
+          # Update asset paths in JS files
+          find dist/public -type f -name "*.js" -exec sed -i 's|"/assets|"/portfolio/assets|g' {} +
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
