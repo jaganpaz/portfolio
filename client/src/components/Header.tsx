@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
+import { Mail, MapPin, Linkedin } from "lucide-react";
 
 export default function Header() {
   return (
@@ -15,13 +15,6 @@ export default function Header() {
         >
           <Mail className="h-4 w-4" />
           Jagan.Pazhaniyandi@gmail.com
-        </a>
-        <a 
-          href="tel:+13109104447" 
-          className="flex items-center gap-2 link-hover"
-        >
-          <Phone className="h-4 w-4" />
-          (310) 910-4447
         </a>
         <span className="flex items-center gap-2">
           <MapPin className="h-4 w-4" />
