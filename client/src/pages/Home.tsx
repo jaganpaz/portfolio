@@ -113,28 +113,20 @@ export default function Home() {
         </div>
 
         <div className="space-y-24">
-          <section id="about">
-            <div className="container py-24 max-w-[90rem] mx-auto px-4 md:px-8">
-              <About />
-            </div>
+          <section id="about" className="container py-24 max-w-[90rem] mx-auto px-4 md:px-8">
+            <About />
           </section>
 
-          <section id="experience">
-            <div className="container py-24 max-w-[90rem] mx-auto px-4 md:px-8">
-              <Experience />
-            </div>
+          <section id="experience" className="container py-24 max-w-[90rem] mx-auto px-4 md:px-8">
+            <Experience />
           </section>
 
-          <section id="skills">
-            <div className="container py-24 max-w-[90rem] mx-auto px-4 md:px-8">
-              <Skills />
-            </div>
+          <section id="skills" className="container py-24 max-w-[90rem] mx-auto px-4 md:px-8">
+            <Skills />
           </section>
 
-          <section id="education">
-            <div className="container py-24 max-w-[90rem] mx-auto px-4 md:px-8">
-              <Education />
-            </div>
+          <section id="education" className="container py-24 max-w-[90rem] mx-auto px-4 md:px-8">
+            <Education />
           </section>
         </div>
       </main>
