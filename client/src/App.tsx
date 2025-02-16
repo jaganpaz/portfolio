@@ -10,11 +10,16 @@ import Home from "@/pages/Home";
 const base = import.meta.env.VITE_BASE || '/portfolio/';
 
 // Custom hook for handling GitHub Pages hash-based routing
-const useHashLocation = () => {
+const useHashLocation = (): [string, (to: string, ...args: any[]) => void] => {
   const getHashLocation = () => {
-    // Get the hash without the '#' symbol and ensure it starts with '/'
-    const hash = window.location.hash.replace('#', '') || '/';
-    return hash.startsWith('/') ? hash : '/' + hash;
+    let hash = window.location.hash.replace('#', '') || '/';
+    // Ensure hash starts with '/' and handle empty hash
+    hash = hash.startsWith('/') ? hash : '/' + hash;
+    // Remove base path if present in the hash
+    if (hash.startsWith(base)) {
+      hash = hash.slice(base.length);
+    }
+    return hash;
   };
 
   const [loc, setLoc] = React.useState(getHashLocation());
@@ -28,6 +33,8 @@ const useHashLocation = () => {
 
     // Listen to hashchange events
     window.addEventListener('hashchange', handler);
+    // Handle initial route on page load
+    handler();
     return () => window.removeEventListener('hashchange', handler);
   }, []);
 
@@ -36,7 +43,7 @@ const useHashLocation = () => {
     window.location.hash = to.startsWith('/') ? to : '/' + to;
   };
 
-  return [loc, navigate] as const;
+  return [loc, navigate];
 };
 
 function AppRouter() {

@@ -47,6 +47,8 @@ jobs:
           find dist/public -type f -name "*.html" -exec sed -i 's|<head>|<head><base href="/portfolio/"/>|' {} +
           # Update asset paths in JS files
           find dist/public -type f -name "*.js" -exec sed -i 's|"/assets|"/portfolio/assets|g' {} +
+          # Handle source maps if they exist
+          find dist/public -type f -name "*.map" -exec sed -i 's|"/assets|"/portfolio/assets|g' {} +
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
