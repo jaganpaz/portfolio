@@ -9,16 +9,14 @@
     <!-- Initialize production routing -->
     <script type="text/javascript">
       (function() {
-        // Redirect to hash-based route in production
+        // Handle GitHub Pages deployment
         if (window.location.hostname.includes('github.io')) {
           var pathname = window.location.pathname;
           var portfolioIndex = pathname.indexOf('/portfolio');
           if (portfolioIndex !== -1) {
             var route = pathname.slice(portfolioIndex + '/portfolio'.length) || '/';
             if (!window.location.hash) {
-              window.location.replace(
-                window.location.origin + '/portfolio/#' + route
-              );
+              window.location.replace(window.location.origin + '/portfolio/#' + route);
             }
           }
         }
@@ -27,9 +25,6 @@
 
     <!-- Handle direct access to routes -->
     <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
       (function(l) {
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) { 
@@ -40,6 +35,15 @@
           );
         }
       }(window.location))
+    </script>
+
+    <!-- Force base URL for assets -->
+    <script>
+      window.__BASE_URL__ = window.location.hostname.includes('github.io') ? '/portfolio/' : '/';
+      // Add base path to all asset URLs in production
+      if (window.location.hostname.includes('github.io')) {
+        document.write('<base href="/portfolio/">');
+      }
     </script>
   </head>
   <body>

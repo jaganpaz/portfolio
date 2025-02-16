@@ -32,12 +32,20 @@ jobs:
           VITE_APP_BASE_URL: "/portfolio"
           VITE_BASE: "/portfolio/"
           PUBLIC_URL: "/portfolio"
+          BASE_URL: "/portfolio/"
           NODE_ENV: "production"
+          VITE_PUBLIC_PATH: "/portfolio/"
 
       - name: Setup GitHub Pages files
         run: |
           cp dist/public/index.html dist/public/404.html
           touch dist/public/.nojekyll
+          echo "/* /index.html 200" > dist/public/_redirects
+          # Ensure all asset paths are correct
+          find dist/public -type f -name "*.html" -exec sed -i 's|src="/assets|src="/portfolio/assets|g' {} +
+          find dist/public -type f -name "*.html" -exec sed -i 's|href="/assets|href="/portfolio/assets|g' {} +
+          # Add base tag to HTML files
+          find dist/public -type f -name "*.html" -exec sed -i 's|<head>|<head><base href="/portfolio/"/>|' {} +
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

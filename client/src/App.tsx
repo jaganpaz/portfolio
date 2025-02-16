@@ -19,13 +19,13 @@ const useBasePath = () => {
     // In production (GitHub Pages), use hash-based routing
     if (isProduction) {
       if (hash) {
-        return hash === '/' ? '/' : hash;
-      } else {
-        // Initialize hash routing on first load
-        const pathname = path.replace('/portfolio', '') || '/';
-        window.location.hash = pathname;
-        return pathname;
+        // Remove leading slash if present to avoid double slashes
+        return hash.startsWith('/') ? hash : '/' + hash;
       }
+      // Initialize hash routing on first load
+      const pathname = path.replace('/portfolio/', '') || '/';
+      window.location.replace(window.location.origin + '/portfolio/#' + pathname);
+      return pathname;
     }
 
     // Handle base path in development
@@ -37,7 +37,8 @@ const useBasePath = () => {
   const navigate = (to: string, { replace = false } = {}) => {
     // In production (GitHub Pages), use hash-based routing
     if (isProduction) {
-      window.location.hash = to === '/' ? '/' : to;
+      const newPath = to === '/' ? '/' : to.startsWith('/') ? to : '/' + to;
+      window.location.hash = newPath;
     } else {
       // In development, use regular routing
       const method = replace ? 'replaceState' : 'pushState';
