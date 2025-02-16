@@ -6,7 +6,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 
 // Get base from environment or default to /portfolio/
-const base = import.meta.env.VITE_APP_BASE_URL ? `/${import.meta.env.VITE_APP_BASE_URL}` : '/portfolio';
+const base = import.meta.env.BASE_URL || '/portfolio/';
 
 function Router() {
   return (

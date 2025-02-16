@@ -30,6 +30,7 @@ jobs:
         run: npm run build
         env:
           VITE_APP_BASE_URL: "portfolio"
+          BASE_URL: "/portfolio/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
