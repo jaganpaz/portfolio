@@ -13,14 +13,29 @@ const useBasePath = () => {
   // Get the current location relative to the base path
   const currentLocation = () => {
     const path = window.location.pathname;
+    const hash = window.location.hash.slice(1); // Remove the # character
+
+    // In production (GitHub Pages), use hash-based routing
+    if (process.env.NODE_ENV === 'production' && hash) {
+      return hash;
+    }
+
+    // Handle base path in development
     const hasBase = path.startsWith(base);
     return hasBase ? path.slice(base.length) || '/' : path;
   };
 
-  // Navigate function that prepends the base path and handles the history API
+  // Navigate function that handles both hash-based and regular routing
   const navigate = (to: string, { replace = false } = {}) => {
     const method = replace ? 'replaceState' : 'pushState';
-    window.history[method](null, '', base + (to === '/' ? '' : to));
+
+    // In production (GitHub Pages), use hash-based routing
+    if (process.env.NODE_ENV === 'production') {
+      window.location.hash = to;
+    } else {
+      // In development, use regular routing
+      window.history[method](null, '', base + (to === '/' ? '' : to));
+    }
   };
 
   return [currentLocation(), navigate];
