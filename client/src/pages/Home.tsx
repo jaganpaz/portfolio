@@ -41,8 +41,12 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  const getBasePath = () => {
-    return import.meta.env.VITE_APP_BASE_URL ? `/${import.meta.env.VITE_APP_BASE_URL}` : '/portfolio';
+  const scrollToSection = (id: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -56,7 +60,8 @@ export default function Home() {
               {navItems.map(({ id, label }) => (
                 <a
                   key={id}
-                  href={`${getBasePath()}/#${id}`}
+                  href={`#${id}`}
+                  onClick={(e) => scrollToSection(id, e)}
                   className={`text-sm transition-colors hover:text-foreground ${
                     activeSection === id
                       ? "text-foreground font-medium"
@@ -80,19 +85,20 @@ export default function Home() {
                   {navItems.map(({ id, label }) => (
                     <a
                       key={id}
-                      href={`${getBasePath()}/#${id}`}
-                      className={`text-lg py-2 transition-colors hover:text-foreground ${
-                        activeSection === id
-                          ? "text-foreground font-medium"
-                          : "text-muted-foreground"
-                      }`}
-                      onClick={() => {
+                      href={`#${id}`}
+                      onClick={(e) => {
+                        scrollToSection(id, e);
                         const sheet = document.querySelector('[data-state="open"]');
                         if (sheet) {
                           const closeButton = sheet.querySelector('button[aria-label="Close"]');
                           closeButton?.click();
                         }
                       }}
+                      className={`text-lg py-2 transition-colors hover:text-foreground ${
+                        activeSection === id
+                          ? "text-foreground font-medium"
+                          : "text-muted-foreground"
+                      }`}
                     >
                       {label}
                     </a>
