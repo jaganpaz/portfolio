@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 
-// Get base from environment or default to /portfolio/
+// Get base from environment with fallback
 const base = import.meta.env.BASE_URL || '/portfolio/';
 
 function Router() {
