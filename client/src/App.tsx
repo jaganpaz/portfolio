@@ -7,6 +7,7 @@ import Home from "@/pages/Home";
 
 // Get base from environment with fallback
 const base = import.meta.env.VITE_BASE || '/portfolio/';
+const isProduction = import.meta.env.PROD;
 
 // Custom hook for handling base path in both development and production
 const useBasePath = () => {
@@ -16,8 +17,15 @@ const useBasePath = () => {
     const hash = window.location.hash.slice(1); // Remove the # character
 
     // In production (GitHub Pages), use hash-based routing
-    if (process.env.NODE_ENV === 'production' && hash) {
-      return hash;
+    if (isProduction) {
+      if (hash) {
+        return hash === '/' ? '/' : hash;
+      } else {
+        // Initialize hash routing on first load
+        const pathname = path.replace('/portfolio', '') || '/';
+        window.location.hash = pathname;
+        return pathname;
+      }
     }
 
     // Handle base path in development
@@ -27,13 +35,12 @@ const useBasePath = () => {
 
   // Navigate function that handles both hash-based and regular routing
   const navigate = (to: string, { replace = false } = {}) => {
-    const method = replace ? 'replaceState' : 'pushState';
-
     // In production (GitHub Pages), use hash-based routing
-    if (process.env.NODE_ENV === 'production') {
-      window.location.hash = to;
+    if (isProduction) {
+      window.location.hash = to === '/' ? '/' : to;
     } else {
       // In development, use regular routing
+      const method = replace ? 'replaceState' : 'pushState';
       window.history[method](null, '', base + (to === '/' ? '' : to));
     }
   };

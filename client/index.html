@@ -6,7 +6,26 @@
     <title>Portfolio - Jagan Pazhaniyandi</title>
     <meta name="description" content="Technology consulting and engineering management portfolio of Jagan Pazhaniyandi" />
 
-    <!-- Start Single Page Apps for GitHub Pages -->
+    <!-- Initialize production routing -->
+    <script type="text/javascript">
+      (function() {
+        // Redirect to hash-based route in production
+        if (window.location.hostname.includes('github.io')) {
+          var pathname = window.location.pathname;
+          var portfolioIndex = pathname.indexOf('/portfolio');
+          if (portfolioIndex !== -1) {
+            var route = pathname.slice(portfolioIndex + '/portfolio'.length) || '/';
+            if (!window.location.hash) {
+              window.location.replace(
+                window.location.origin + '/portfolio/#' + route
+              );
+            }
+          }
+        }
+      })();
+    </script>
+
+    <!-- Handle direct access to routes -->
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License
@@ -21,23 +40,6 @@
           );
         }
       }(window.location))
-    </script>
-    <!-- End Single Page Apps for GitHub Pages -->
-
-    <!-- Handle direct access to routes -->
-    <script type="text/javascript">
-      // Handle routing for GitHub Pages deployment
-      (function(l) {
-        if (l.pathname.split('/')[1] === 'portfolio') {
-          var segment = l.pathname.split('/').slice(2).join('/');
-          if (segment !== '' && !l.search && !l.hash) {
-            l.replace(
-              l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-              '/portfolio/?/' + segment + l.hash
-            );
-          }
-        }
-      })(window.location);
     </script>
   </head>
   <body>
