@@ -27,9 +27,9 @@ const experiences = [
     achievements: [
       "Led 15+ client implementations across diverse industries (Symantec, Thermo Fisher, Western Union) in a consulting environment. Gained experience working with a wide range of technologies",
       "Converted business goals into features for SAFe Agile, preplanning driving, socialization, and deep dives. Enhanced business alignment through 3+ PI Planning cycles",
-      "Reduced delays by 80% by implementing a payment guideline validation engine",
-      "Designed a centralized Single Entity Store at Western Union, optimizing payment processing costs and faster payments to end users",
-      "Streamlined bank data services with the 'Find a Bank' microservice, cutting development hours by 40%",
+      "Reduced delays by 80% by implementing a payment guideline validation engine for a fintech client WesternUnion / Convera",
+      "Designed a centralized Single Entity Store for optimizing payment processing costs and faster payments to end users for a fintech client WesternUnion / Convera",
+      "Streamlined bank data services with the 'Find a Bank' microservice, cutting development hours by 40% for a fintech client WesternUnion / Convera",
       "Led the upgrade of Enterprise Products' entire suite of Oracle products from 11g to 12c version as Delivery Manager/Technical Lead",
       "Led the implementation of the Oracle Coherence Cache enabling all applications to access location, customer, and equipment data. This integration resulted in a 4x improvement in performance",
       "Led the development of a web application for Thermo Fisher using Oracle Middleware stack that supported 2,000 users at launch, enabling tailored views, secure dashboards, and global inventory reports",
