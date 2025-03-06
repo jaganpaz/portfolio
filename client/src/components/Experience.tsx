@@ -13,10 +13,13 @@ const experiences = [
       "Led application development and support for U.S. Fulfillment Centers, centralizing operations and ensuring the daily handling of 1,000 orders with increased efficiency",
       "Delivered $560K annual savings by implementing an in-house liquidator onboarding process, reducing warehouse labor and shipping costs",
       "Managing the Reverse Logistics Projects to support $500M Covering all of USA",
+      "Designed and integrated UPS Returns Decision Engine to automate return decisions and enhancing customer experience",
+      "Developed and integrated DHL returns processing system to streamline reverse logistics, ensuring efficient tracking and faster restocking of returned products",
       "Reengineered warranty processes saving $350K and enhanced warranty shopping experience, reduced resolution time by 10 hours, and improved efficiency by 17%",
       "Engineered onboarding workflows for Angi and streamlined the installation process to boost conversion rates and enhance the customer experience, driving a $3.4 million contribution margin",
       "Transitioned to a generative AI Platform for chatbot and SMS reducing support tickets by 30% and boosting satisfaction rates",
-      "Built Various Projects with Overstock's transition to Bed Bath and Beyond ensuring smooth operations and 100% business continuity"
+      "Built Various Projects with Overstock's transition to Bed Bath and Beyond ensuring smooth operations and 100% business continuity",
+      "Collaborate with Product, Operations, Design, and other stakeholders to determine the team's roadmap, vision, and strategy. Manage execution against that roadmap"
     ]
   },
   {
