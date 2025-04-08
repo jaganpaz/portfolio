@@ -25,7 +25,7 @@ const skills = {
     "Business Vision Integration"
   ],
   "Cloud Platforms": ["AWS Lambda", "API Gateway", "ECS", "DynamoDB", "EC2", "GCP"],
-  "Programming & Frameworks": ["Java", "Spring Boot", "REST APIs", "Oracle ADF", "WebCenter", "Angular", "Node.js", "React"],
+  "Programming & Frameworks": ["Java", "Spring Boot", "REST APIs", "Oracle ADF", "WebCenter", "Angular", "Node.js", "React","Python"],
   "Database": ["Oracle DB", "MySQL", "PostgreSQL", "DynamoDB", "MongoDB"],
   "DevOps": ["Jenkins", "Maven", "SonarQube", "Checkmarx", "Docker", "Kubernetes", "Git", "AWS", "CI/CD"],
   "Enterprise Tools": ["Oracle ADF", "WebCenter Portal", "Content Servers", "WebLogic", "Oracle Coherence Cache", "Redis Cache", "Kafka", "Pulsar", "RabbitMQ", "ElasticSearch", "REST Services", "GraphQL"],
