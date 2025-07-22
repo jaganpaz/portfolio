@@ -8,16 +8,10 @@ export default function About() {
         <CardContent className="pt-6 space-y-6">
           <div>
             <p className="text-lg leading-relaxed">
-              20+ years of experience in Consulting & Engineering Management 
-              across the technology landscape. Expertise in Digital Transformation, Modernization, Infrastructure 
-              Modernization, and Customer Experience enhancement. Demonstrated success in multiple roles including 
-              Tech Leading, Design & Development, Solution Analysis, Product Management, and Enterprise & Application 
-              Architecture.
-            </p>
-            <p className="text-lg leading-relaxed mt-4">
-              Proven track record in managing and delivering projects through Onsite-Offshore Delivery Models, 
-              implementing Agile/Safe Agile methodologies for various products and applications. Strong focus on 
-              driving innovation and delivering high-impact solutions across different technology streams.
+              Engineering leader with 20+ years of experience architecting scalable software solutions, leading high-performing engineering teams, 
+              and modernizing enterprise platforms across e-commerce, logistics, and financial services domains. Proven expertise in backend architecture 
+              (microservices, event-driven), cloud infrastructure (AWS, GCP), and DevOps practices.
+              Skilled in bridging the gap between business goals and engineering execution in Agile/Scrum/SAFe environments.
             </p>
           </div>
         </CardContent>
