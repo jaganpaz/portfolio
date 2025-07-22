@@ -9,7 +9,7 @@ export default function About() {
           <div>
             <p className="text-lg leading-relaxed">
               Engineering leader with 20+ years of experience leading full-stack development teams, building scalable backend systems, and delivering exceptional front-end experiences across e-commerce, logistics, 
-              and fintech domains. Expert in architecting microservices and event-driven platforms using Java, Spring Boot, and AWS and frontend frameworks like React, 
+              and fintech domains. Skilled in architecting microservices and event-driven platforms using Java, Spring Boot, and AWS and frontend frameworks like React, 
               Angular, and Node.js. Proven ability to drive digital transformation by aligning technical execution with business goals. 
               Adept at managing globally distributed engineering teams, improving developer productivity, and optimizing delivery pipelines in Agile, Scrum, and SAFe environments
             </p>
