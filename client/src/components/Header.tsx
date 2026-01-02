@@ -18,7 +18,7 @@ export default function Header() {
         </a>
         <span className="flex items-center gap-2">
           <MapPin className="h-4 w-4" />
-          Dallas, Texas
+          Dallas, Texas / Miami, Florida
         </span>
         <a 
           href="https://www.linkedin.com/in/jaganpazhaniyandi/" 
