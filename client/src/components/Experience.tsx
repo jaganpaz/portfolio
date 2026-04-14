@@ -43,7 +43,7 @@ const experiences = [
   },
   {
     company: "Cognizant Technology Solutions",
-    location: "GreenBay, Wisconsin",
+    location: "Green Bay, Wisconsin",
     title: "Senior Associate Consultant",
     period: "June 2004 - May 2013",
     achievements: [
